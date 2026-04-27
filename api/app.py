@@ -6,6 +6,16 @@ from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 from cryptography.fernet import Fernet
 from concurrent.futures import ThreadPoolExecutor
+import os
+from flask import Flask
+
+# Point to the root directory where templates/ and static/ reside
+template_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'templates'))
+static_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'static'))
+
+app = Flask(__name__, 
+            template_folder=template_dir, 
+            static_folder=static_dir)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
