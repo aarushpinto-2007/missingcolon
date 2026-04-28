@@ -25,10 +25,10 @@ RUN mkdir -p /tmp/shieldstream/uploads \
              /tmp/shieldstream/final_stream
 
 # Azure uses dynamic port → MUST use $PORT
-ENV PORT=8000
+ENV PORT=5000
 
 # Expose port (not strictly required but good practice)
-EXPOSE 8000
+EXPOSE 5000
 
 # Start app using dynamic port (IMPORTANT)
 CMD ["sh", "-c", "gunicorn --bind=0.0.0.0:$PORT --timeout=120 --workers=2 api.app:app"]
