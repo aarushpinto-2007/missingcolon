@@ -1,13 +1,125 @@
-/* ShieldStream Styles - Replace with your existing style.css content */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --primary: #3b82f6;
+    --accent: #10b981;
+    --text: #f8fafc;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #0a0a0a;
-    color: #ffffff;
-    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container { width: 100%; max-width: 600px; }
+
+h1 { text-align: center; margin-bottom: 5px; }
+.subtitle { text-align: center; color: #94a3b8; margin-bottom: 30px; }
+
+/* Tabs */
+.tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid #334155; }
+.tab-btn { 
+    background: none; border: none; color: #94a3b8; padding: 10px 15px; 
+    cursor: pointer; font-weight: bold; border-bottom: 2px solid transparent;
+}
+.tab-btn.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Cards */
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.drop-zone {
+    border: 2px dashed #475569;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.video-container {
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.status-bar { font-size: 0.9em; color: #94a3b8; }
+#receiveStat { color: var(--accent); }
+
+.loader {
+    border: 3px solid #334155;
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 10px auto;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Tab Buttons */
+.tabs { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+    justify-content: center;
+    border-bottom: 1px solid #334155; 
+}
+.tab-btn { 
+    background: none; 
+    border: none; 
+    color: #94a3b8; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
+.tab-btn.active { 
+    color: #3b82f6; 
+    border-bottom: 2px solid #3b82f6; 
+}
+
+/* Tab Content Visibility */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Video Player Styling */
+.video-container {
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
 }
