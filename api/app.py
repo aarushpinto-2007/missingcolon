@@ -15,7 +15,7 @@ RECEIVE_DIR = os.path.join(BASE_PATH, 'receiver_buffer')
 MASTER_VIDEO = os.path.join(RECEIVE_DIR, "live_output.mp4")
 
 # Set your Receiver URL (If same app, use localhost, else use the other app's URL)
-RECEIVER_URL = "http://localhost:5000/internal_receive"
+RECEIVER_URL = "http://127.0.0.1:8000/internal_receive"
 
 def cleanup():
     if os.path.exists(BASE_PATH):
